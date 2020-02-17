@@ -11,5 +11,5 @@ perl Reverse_complement.pl -fasta input.fasta [-out output.fasta]
 [input.fasta].rev_comp or [-out output.fasta] if specified
 
 # AUTHOR
-
+  
   Damien Richard, 2019
