@@ -10,12 +10,12 @@ use Getopt::Long;
 
 =head1 USAGE
 
-	perl Reverse_complement.pl input.fasta
+	perl Reverse_complement.pl -fasta input.fasta [-out output.fasta] 
+	-h or -help:	This Documentation
 
 =head1 OUTPUT
 
-	[input.fasta].rev_comp
-	-h or -help:	This Documentation
+	[input.fasta].rev_comp or [-out output.fasta] if specified
 
 =head1 AUTHOR
 
@@ -23,17 +23,18 @@ use Getopt::Long;
 
 =cut
 
-my $hl;
+my ($hl,$fasta, $output);
 
 GetOptions(
-	"h|help" => \$hl,
+	"fasta=s" => \$fasta,
+	"out=s" => \$output,
+	"h|help" => \$hl
 );
+
+if(! $output){ $output = $fasta . "rev_comp"}
 
 die `pod2text $0` if $hl;
 
-my $fasta = $ARGV[0];
-chomp $fasta;
-my $output = $fasta . "rev_comp";
 my %hhh;
 
 open( OUT, ">", $output ) or die "can't open $!";
@@ -61,5 +62,4 @@ my $nb = scalar keys %hhh;
 print "\tJob done, $nb sequence(s) reverse complemented\n";
 
 close OUT;
-
 
