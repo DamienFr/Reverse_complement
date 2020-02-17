@@ -4,12 +4,12 @@
 
 # USAGE
 
-	perl Reverse_complement.pl input.fasta
+	perl Reverse_complement.pl -fasta input.fasta [-out output.fasta] 
+	-h or -help:	This Documentation
 
 # OUTPUT
 
-	[input.fasta].rev_comp
-	-h or -help:	This Documentation
+	[input.fasta].rev_comp or [-out output.fasta] if specified
 
 # AUTHOR
 
