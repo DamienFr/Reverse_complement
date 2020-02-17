@@ -12,4 +12,4 @@ perl Reverse_complement.pl -fasta input.fasta [-out output.fasta]
 
 # AUTHOR
   
-  Damien Richard, 2019
+   Damien Richard, 2019
